@@ -375,7 +375,7 @@ export default function Detalle() {
             >
               <Icon name="close" />
             </button>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-16 py-12 overflow-hidden">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-black/0 px-16 py-12 overflow-hidden">
               <p className="text-white text-sm line-clamp-3">
                 {cleanText(imageModal.details)}
               </p>

@@ -93,6 +93,7 @@ class GeminiService:
                         complies = json_response.get("complies", False)
                         details = json_response.get("description", response.text)
                         confidence = float(json_response.get("accuracy", 0.0))
+                        rating = float(json_response.get("rating", 0.0))
                     except json.JSONDecodeError:
                         complies = "sí cumple" in response.text.lower()
                         details = response.text
@@ -112,7 +113,8 @@ class GeminiService:
                 name=rule["name"],
                 complies=complies,
                 details=details,
-                accuraccy=confidence
+                accuraccy=confidence,
+                rating=rating
             )
             
             rule_results.append(rule_result)

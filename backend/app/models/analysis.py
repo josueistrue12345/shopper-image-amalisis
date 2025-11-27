@@ -36,6 +36,7 @@ class RuleResult(BaseModel):
     complies: bool
     details: str
     accuraccy: Optional[float] = None
+    rating: Optional[float] = 0
 
 class ImageAnalysisResult(BaseModel):
     image: ImageData

@@ -11,7 +11,7 @@ router = APIRouter()
 def str2id_list(lista: str):
     if not lista:
         return []
-    return [ObjectId(i.strip()) for i in lista.split(",")]
+    return [ObjectId(i.strip()) for i in lista.split(",") if i.strip() and ObjectId.is_valid(i.strip())]
 
 @router.get("/checklists", response_model=List[Checklist])
 async def get_checklists(filtros: Filter = Depends()):
@@ -19,7 +19,7 @@ async def get_checklists(filtros: Filter = Depends()):
         raise HTTPException(400, "La fecha de inicio no puede ser mayor al final")
 
     query = {
-        "createdAt": {
+        "dateApplyed": {
             "$gte": filtros.inicio.isoformat(),
             "$lte": filtros.final.isoformat()
         },

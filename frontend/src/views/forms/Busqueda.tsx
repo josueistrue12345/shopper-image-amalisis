@@ -171,12 +171,11 @@ export default function Busqueda({ onComplete }: BusquedaProps) {
       loading: false,
       message: "",
     });
-    setFilters({
-      inicio: startDate,
-      final: endDate,
+    setFilters((prev) => ({
+      ...prev,
       grupos: "",
       tiendas: "",
-    });
+    }));
     setGruposVal([]);
   };
 
@@ -443,7 +442,7 @@ export default function Busqueda({ onComplete }: BusquedaProps) {
         })}
 
         {alert.completed && !checklists?.length && (
-          <p className="mt-8 text-gray-600">
+          <p className="mt-8 opacity-70">
             No se encontraron formularios con estos filtros
           </p>
         )}

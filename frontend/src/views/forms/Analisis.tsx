@@ -232,7 +232,7 @@ export default function Items({ items, restart, close }: ItemsProps) {
       <div>
         <label className="block mb-1 mt-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">
           {rules.length > 0
-            ? "Selecciona las reglas para iniciar"
+            ? "Selecciona las reglas para cada implementación"
             : "No hay reglas de análisis"}
         </label>
         <div className="flex flex-col py-2 gap-2">

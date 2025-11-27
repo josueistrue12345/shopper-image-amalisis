@@ -65,7 +65,7 @@ class Checklist(BaseModel):
     title: str
     dateApplyed: datetime
     areas: List[Area] = []
-    checkApply: ObjectId
+    checkApply: Optional[ObjectId] = None
 
     class Config:
         arbitrary_types_allowed = True
