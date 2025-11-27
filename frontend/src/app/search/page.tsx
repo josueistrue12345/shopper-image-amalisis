@@ -10,7 +10,7 @@ import { ItemSelection } from "@/models/checklist";
 
 export default function Search() {
   const router = useRouter();
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
   const [items, setItems] = useState<ItemSelection[]>([]);
   const steps = [
     {
